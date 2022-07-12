@@ -1,0 +1,32 @@
+
+exports.getSuggest = 'SELECT * FROM grouping.suggest'
+exports.getSuggestById = 'SELECT * FROM grouping.suggest WHERE id = ?'
+exports.getSuggestByUserId = 'SELECT * FROM grouping.suggest WHERE created_by = ?'
+exports.getParty = 'SELECT * FROM grouping.party WHERE user_id = ?'
+exports.getHobby = 'SELECT * FROM grouping.hobby WHERE name = ?'
+exports.getUser = 'SELECT * FROM grouping.users WHERE id = ?'
+exports.getFriend = 'SELECT * FROM grouping.friend WHERE user_id = ?'
+exports.getTitle = 'SELECT * FROM grouping.title WHERE attractive = ?'
+exports.getChatting = 'SELECT * FROM grouping.chatting WHERE suggest_id = ?'
+
+exports.postUser = 'INSERT INTO grouping.users(id, name ,image,hobby_id,attractive) VALUES (?,?, ?, ?, ?) '
+exports.postSuggest = 'INSERT INTO grouping.suggest(startTime, endTime,created_by,title,content,location,capacity,current,hobby_id) VALUES (?,?, ?, ?, ?,?, ?, ?, ?) '
+exports.postParty = 'INSERT INTO grouping.party(user_id ,suggest_1_id,suggest_2_id,suggest_3_id,suggest_4_id,suggest_5_id)VALUES (?,?, ?,?,?, ?) '
+
+exports.putUser = 'UPDATE grouping.users SET name=?, image=?,hobby_id=?,attractive=? WHERE id = ?'
+exports.putSuggest = 'UPDATE grouping.suggest SET startTime=?, endTime=?,created_by=?,title=?, content=?, location=?,capacity=?,current=?,hobby_id=? WHERE id = ?'
+exports.putParty = 'UPDATE grouping.party SET suggest_1_id=?,suggest_2_id=?,suggest_3_id=?,suggest_4_id=?,suggest_5_id=? WHERE user_id=?'
+
+exports.deleteUser = 'DELETE FROM grouping.users WHERE id =?'
+exports.deleteSuggest= 'DELETE FROM grouping.suggest WHERE id = ?'
+exports.deleteParty = 'DELETE FROM grouping.party WHERE user_id = ?'
+
+// exports.insertBoard = 'insert into board set ?'
+// exports.updateBoard = 'update board set title = ?, content = ?, upd_dt = now() where board_id = ?'
+// exports.deleteBoard = 'delete from board where board_id = ?'
+// exports.getComments = 'select board_id, title, content from board where board_id = ?'
+// exports.insertComment = 'insert into board set ?'
+// exports.plusCommentCnt = 'update board set comment_cnt = comment_cnt + 1 where board_id = ?'
+// exports.updateComment = 'update board_comment set content = ?, upd_dt = now() where comment_id = ?'
+// exports.deleteComment = 'select board_id, title, content from board where board_id = ?'
+// exports.minusCommentCnt = 'update board set comment_cnt = comment_cnt - 1 where board_id = ?'
